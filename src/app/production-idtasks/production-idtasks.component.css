@@ -1,0 +1,21 @@
+
+
+
+
+.layout{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+
+}
+
+.col-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.right{
+  background-color: rgb(157, 157, 157);
+
+}

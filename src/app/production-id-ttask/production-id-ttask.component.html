@@ -1,0 +1,34 @@
+
+
+<div (click)="clickTask()" class="card">
+    <div class="card-body">
+        <h5 [ngClass]="getClasses()" class="card-title">{{task.name}}</h5>
+        <p class="card-text card-col">Description:...............................................................................................................</p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type : {{task.type}}</li>
+            <li class="list-group-item">Created : {{task.dateCreated}}</li>
+            <li class="list-group-item">Due date: {{task.dateDue}}</li>
+            <li class="list-group-item">Supervisor :{{task.cgSupervisor2_name}}</li>
+            <li class="list-group-item">Artist :{{task.cgArtist_name}}</li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-danger" (click)="clickDelete()">Delete</button>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="card-link" (click)="clickTask()" [routerLink]="['/taskdetails']">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    
+ 
+

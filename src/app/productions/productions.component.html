@@ -1,0 +1,116 @@
+<!-- 
+
+<app-header></app-header>
+<main>
+  <ng-template #content let-offcanvas>
+      <div class="offcanvas-header fuchsia-background">
+          <h4 class="offcanvas-title">New production</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+      </div>
+      <div class="offcanvas-body fuchsia-background">
+          <div id="frm">
+              <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+                  <div class="form-group">
+                      <label for="name">Production Name:</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Project Name" [(ngModel)]="formData.name" required>
+                      <div class="invalid-feedback" *ngIf="form.submitted &&!form.controls['name'].valid">
+                          Production Name is required.
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="client">Client:</label>
+                      <input type="text" class="form-control" id="client" name="client" placeholder="Client Name" [(ngModel)]="formData.client" required>
+                      <div class="invalid-feedback" *ngIf="form.submitted &&!form.controls['client'].valid">
+                          Client Name is required.
+                      </div>
+                  </div>
+                  <label for="producers" class="form-label">Available producers:</label>
+                  <select multiple class="form-select mi--width" id="producers" name="producers" [(ngModel)]="selectedProducers" required>
+                      <option *ngFor="let m of producerList" [value]="m">{{m.name}}</option>
+                  </select>
+                  <button type="submit" class="btn btn-primary mt-2 clr" [ngStyle]="{'background-color': form.valid? '' : 'red'}" [disabled]="form.valid">Submit</button>
+              </form>
+          </div>
+      </div>
+  </ng-template>
+
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">New Production</button>
+
+
+      <div class="layout">
+          <app-production *ngFor="let p of productions" (onProductionClickEvent)="handleInput($event)" [production]="p"></app-production>
+      </div>
+</main>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-header></app-header>
+  
+<ng-template #content let-offcanvas>
+    <div class="offcanvas-header fuchsia-background ">
+        <h4 class="offcanvas-title">New production</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body fuchsia-background">
+        <div id="frm">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+                
+                <div class="form-group">
+                <label for="name">Production Name :</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Project Name" [(ngModel)]="formData.name" required >
+            
+                <div class="invalid-feedback" *ngIf="form.submitted && !form.controls['name'].valid">
+                    Production Name is required.
+                </div>
+                </div>
+                
+                <div class="form-group">
+                <label for="client">Client :</label>
+                <input type="text" class="form-control" id="client" name="client" placeholder="Client Name" [(ngModel)]="formData.client" required  >
+                
+                <div class="invalid-feedback" *ngIf="form.submitted && !form.controls['client'].valid">
+                    Client Name is required.
+                </div>
+                </div>
+                
+                <label for="sel2" class="form-label">Available producers :</label>
+                <select multiple class="form-select mi--width" id="sel2" name="sellist2" [(ngModel)]="selectedProducers" required>
+                <option *ngFor="let m of producerList" [value]="m">{{m.name}}</option>
+                </select>
+                
+                <button type="submit" class="btn btn-primary mt-2 clr"  [ngStyle]="{ 'background-color': form.valid ? '' : 'red' }" [disabled]="!form.valid">Submit</button>
+            </form>
+            </div>
+    </div>
+    
+</ng-template>
+    
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">New Production</button>
+    
+    
+
+    
+
+<main>
+  <div class="layout">
+    <app-production *ngFor="let p of productions" (onProductionClickEvent)="handleInput($event)" [production]="p"></app-production>
+    </div>
+</main>

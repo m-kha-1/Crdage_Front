@@ -1,0 +1,76 @@
+
+
+
+<app-header></app-header>
+
+<main>
+    <h1>{{infoProduction.name}}</h1>
+    <div >
+     
+        <div class="right">
+            <img class="card-img-top c" [src]="imagePath" alt="Card image cap" style="max-width: 40%; height: 120px;">
+        </div>
+    </div>
+
+
+    <div class="card">
+        <p-tabView>
+            <p-tabPanel header="Tasks">
+                <ng-template #content let-offcanvas>
+                    <div class="offcanvas-header fuchsia-background">
+                        <h4 class="offcanvas-title">New task</h4>
+                        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+                    </div>
+
+                    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+                        <div class="form-group">
+                            <label for="name">Task Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Task Name" [(ngModel)]="formData.name" required>
+                        </div>
+
+                        <div class="invalid-feedback">
+                            Task Name is required.
+                        </div>
+
+                        <label for="type" class="form-label">Type:</label>
+                        <select class="form-select mi--width" id="type" name="type" [(ngModel)]="formData.type">
+                            <option *ngFor="let t of taskType" [value]="t">{{t}}</option>
+                        </select>
+
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="dueDate" [(ngModel)]="dateDue" ngbDatepicker #d="ngbDatepicker" />
+                                <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+                            </div>
+                        </div>
+
+                        <label for="producers" class="form-label">Available producers:</label>
+                        <select multiple class="form-select mi--width" id="producers" name="producers" [(ngModel)]="selectedProducers" required>
+                            <option *ngFor="let m of producerList" [value]="m">{{m.name}}</option>
+                        </select>
+
+                        <label for="artists" class="form-label">Available cgartists:</label>
+                        <select multiple class="form-select mi--width" id="artists" name="artists" [(ngModel)]="selectedArtist">
+                            <option *ngFor="let m of cgArtistList" [value]="m">{{m.name}}</option>
+                        </select>
+
+                        <label for="supervisors" class="form-label">Available supervisors:</label>
+                        <select multiple class="form-select mi--width" id="supervisors" name="supervisors" [(ngModel)]="selectedSupervisor">
+                            <option *ngFor="let m of supervisorList" [value]="m">{{m.name}}</option>
+                        </select>
+
+                        <button type="submit" class="btn btn-primary mt-2 clr">Submit</button>
+                    </form>
+                </ng-template>
+
+                <button class="btn btn-lg btn-outline-primary" (click)="open(content)">New task</button>
+
+                <div class="layout">
+                    <app-production-id-ttask *ngFor="let x of productionIdTasks" [task]="x" (evenementTask)="handleInput($event)" (evenementTaskDelete)="delete($event)"></app-production-id-ttask>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</main>
+
+      

@@ -1,0 +1,74 @@
+/* Style pour le conteneur du formulaire */
+header {
+    margin :30px 0px;
+    background-color: rgb(118, 118, 118);
+    display: flex;
+    padding: 70px;
+}
+
+
+
+
+.form-container {
+    width: 400px;
+    margin:  auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#bout {
+    background-color: #0a0c0d;
+    /* Couleur de fond du bouton */
+    color: rgb(255, 255, 255);
+    /* Couleur du texte */
+    padding: 10px 20px;
+    /* Espacement intérieur */
+    border: none;
+    /* Supprimer la bordure */
+    border-radius: 4px;
+    /* Coins arrondis */
+    cursor: pointer;
+    /* Curseur de type main */
+}
+
+/* Style pour le bouton au survol */
+
+
+div{
+
+   
+    margin-bottom:20px;
+    padding-bottom: 10px;
+}
+
+#frm{
+    width: 300px;
+    border-width: 4px;
+   
+    margin:20px;
+    padding: 10px;
+    border-style:solid;
+    border-width: 2px;
+    border-radius: 2%;
+    border-color:rgb(214, 170, 237);
+    width:350px;
+
+
+}
+
+/* Style pour les champs de formulaire invalides */
+.is-invalid {
+    border-color: #dc3545; /* Couleur de la bordure rouge */
+  }
+  
+  /* Style pour les champs de formulaire validés */
+  .was-validated {
+    border-color: #28a745; /* Couleur de la bordure verte */
+  }
+  
+
+  .clr{
+    background-color: green;
+  }
