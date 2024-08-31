@@ -21,8 +21,8 @@ import { Comment } from '@angular/compiler';
 })
 export class ProductionsService {
 
-  // url = 'http://127.0.0.1:8000'  // URL de base pour l'API
-  url = 'https://crdage-back.onrender.com'  // URL de base pour l'API
+  url = 'http://127.0.0.1:8000'  // URL de base pour l'API
+  // url = 'https://crdage-back.onrender.com'  // URL de base pour l'API
 
 
   //  endpoint obtenir liste des productions
