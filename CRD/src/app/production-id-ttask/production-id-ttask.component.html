@@ -1,24 +1,79 @@
-
-
-<div (click)="clickTask()" class="card">
+<div class="card">
     <div class="card-body">
-        <h5 [ngClass]="getClasses()" class="card-title">{{task.name}}</h5>
-        <p class="card-text card-col">Description:...............................................................................................................</p>
+        <h5
+            [ngClass]="getClasses()"
+            class="card-title"
+        >
+            {{task.name}}
+        </h5>
+        <p class="card-text card-col">
+            Description:
+            ...................................................
+        </p>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Type : {{task.type}}</li>
-            <li class="list-group-item">Created : {{task.dateCreated}}</li>
-            <li class="list-group-item">Due date: {{task.dateDue}}</li>
-            <li class="list-group-item">Supervisor :{{task.cgSupervisor2_name}}</li>
-            <li class="list-group-item">Artist :{{task.cgArtist_name}}</li>
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Type:</span>
+                    <span>{{task.type}}</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Created:</span>
+                    <span>{{task.dateCreated}}</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Due date:</span>
+                    <span>{{task.dateDue}}</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Supervisor:</span>
+                    <span>{{task.cgSupervisor2_name}}</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Artist:</span>
+                    <span>{{task.cgArtist_name}}</span>
+                </div>
+                <li class="list-group-item">
+                    <div
+                        class="d-flex justify-content-between"
+                        [ngClass]="{
+                            'status-completed': task.completed,
+                            'status-not-completed': !task.completed
+                        }"
+                    >
+                        <span>Status:</span>
+                        <span>{{ task.completed ? 'Completed' : 'IN PROGRESS' }}</span>
+                    </div>
+                </li>
         </ul>
     </div>
+    
     <div class="card-body">
         <div class="row">
             <div class="col">
-                <button class="btn btn-danger" (click)="clickDelete()">Delete</button>
+                <button
+                    class="btn btn-danger"
+                    (click)="clickDelete()"
+                >
+                    Delete
+                </button>
             </div>
             <div class="col-auto">
-                <a href="#" class="card-link" (click)="clickTask()" [routerLink]="['/taskdetails']">Details</a>
+                <a
+                    href="#"
+                    class="card-link"
+                    (click)="clickTask()"
+                    [routerLink]="['/taskdetails']"
+                >
+                    Details
+                </a>
             </div>
         </div>
     </div>

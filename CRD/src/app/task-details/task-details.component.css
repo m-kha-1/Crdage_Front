@@ -1,0 +1,8 @@
+.thumbnail {
+    width: 450px; /* Ajustez la largeur de la vignette */
+    height: auto; /* Garde les proportions de l'image */
+    cursor: pointer; /* Change le curseur lorsqu'on survole l'image */
+   
+    border-radius: 5px; /* Optionnel : rend les coins de la vignette arrondis */
+  }
+  

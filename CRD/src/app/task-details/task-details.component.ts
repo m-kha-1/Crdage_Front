@@ -231,7 +231,7 @@ export class TaskDetailsComponent {
 
   if (this.organization!=null){console.log("organization : ",this.organization)
   this.productionsService.listVersionsPublished(this.organization,this.dataTaskString.production_name,this.dataTaskString.type,this.dataTaskString.name).subscribe((data:any) =>{
-    this.urls=   this.pathToUrl(data); console.log("images",this.urls);
+    this.urls=data; console.log("images",this.urls);
    });
   }
 

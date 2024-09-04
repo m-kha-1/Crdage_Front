@@ -4,18 +4,26 @@
 }
 
 .card-col{
-    background-color: rgb(159, 0, 95);
+    background-color: rgb(175, 171, 174);
 }
 
 
 .card-col2{
 
-    background-color: rgb(255, 221, 2);
+    background-color: rgb(255, 171, 2);
 
 }
 
-.card-body{ background-color: rgb(236, 235, 206)
+.card-body{ background-color: rgb(234, 234, 234)
 
 }
 
 
+.status-completed {
+    background-color: #d4edda; /* Couleur verte claire pour "complété" */
+    color: #155724; /* Texte vert foncé pour "complété" */
+}
+
+.status-not-completed {
+    color: #ffae00; /* Texte rouge foncé pour "non complété" */
+}

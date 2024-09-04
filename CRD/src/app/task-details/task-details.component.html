@@ -11,7 +11,7 @@
   <div class="container mt-3">
     <div *ngFor="let url of urls;let i = index">
       <div class="card mb-3">
-        <img class="card-img-top" [src]="url" alt="Image description" (click)="onImageClick(i)" >
+        <img [src]="url" alt="Image description" class="thumbnail" (click)="onImageClick(i)" >
 
 
         <input

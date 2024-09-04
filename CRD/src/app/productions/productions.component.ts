@@ -143,6 +143,8 @@ resetForm():void{
 onSubmit(form: NgForm){if (localStorage.getItem('userType')=='(producer)'){
 
   if (form.valid) {
+    // let path : string=window.localStorage.getItem('path') || '';
+  
     this.formData.producers = this.selectedProducers.map(producer => producer.id);
     this.productionService.createNewProduction(this.formData).subscribe((response) => {
       console.log('Production créée :', response);

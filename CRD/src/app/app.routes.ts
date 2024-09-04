@@ -6,6 +6,7 @@ import { ProductionsComponent } from './productions/productions.component';
 import { ProductionIdtasksComponent } from './production-idtasks/production-idtasks.component';
 
 import { TaskDetailsComponent } from './task-details/task-details.component';
+import { PathComponent } from './path/path.component';
 
 export const routes: Routes = [
     {path:'',component: LoginComponent},
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path:'productionsIdTasks', component:ProductionIdtasksComponent },
 
     {path:'taskdetails', component:TaskDetailsComponent},
+    {path:'path', component:PathComponent},
     
 
 ];

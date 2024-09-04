@@ -14,12 +14,11 @@ export class HeaderComponent {
   infoRole!:string | null;
    
   determineTextColor() {
-    // Logique pour déterminer la couleur en fonction de infoName ou infoRole
-    // Par exemple :
+  
     if (this.infoName === 'Unknown username or bad password') {
-        return 'red'; // Texte vert pour le rôle "Admin"
+        return 'red'; 
     } else {
-        return 'blue'; // Texte rouge pour tous les autres rôles
+        return 'rgb(144, 238, 144)'; 
     }
 
 
