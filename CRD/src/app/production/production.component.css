@@ -1,0 +1,33 @@
+.p {
+  background-color: rgb(13, 155, 141);
+  color: rgb(199, 109, 7);
+
+  border-width: 2px;
+  border-color: rgb(39, 30, 18);
+  border-style: solid;
+
+  padding: 20px 300px;
+  margin: 20px;
+}
+.card:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+#production {
+  margin: 10px;
+}
+
+.taille {
+  width: 200px;
+}
+
+.card {
+  background-color: rgb(234, 234, 234);
+}
+.list-group-item {
+  background-color: rgb(59, 56, 56);
+  color: aliceblue;
+}
+.list-group-item2 {
+  background-color: rgb(0, 0, 0);
+}

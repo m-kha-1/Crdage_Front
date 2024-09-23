@@ -1,0 +1,30 @@
+<div class="card" style="width: 18rem">
+  <img
+    class="card-img-top c"
+    [src]="imagePath.vignette"
+    alt="Card image cap"
+    style="max-width: 100%; height: 120px"
+  />
+
+  <div *ngIf="production != null" class="card-body">
+    <p class="card-text card-col">
+      Description:
+      ..........................................................................................................................................................................
+    </p>
+  </div>
+
+  <ul *ngIf="production != null" class="list-group list-group-flush">
+    <li class="list-group-item">{{ production.name }}</li>
+    <li class="list-group-item">{{ production.client }}</li>
+  </ul>
+
+  <div class="card-body">
+    <a
+      class="card-link"
+      (click)="onClick()"
+      [routerLink]="['/productionsIdTasks']"
+    >
+      Details
+    </a>
+  </div>
+</div>

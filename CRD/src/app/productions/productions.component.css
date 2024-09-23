@@ -1,0 +1,31 @@
+/* 
+header {
+    background-color: rgb(52, 51, 51);
+    
+    padding: 18px;
+} */
+
+.layout {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1,
+h2 {
+  color: blanchedalmond;
+  font-size: 300%;
+}
+
+button {
+  background-color: #a9a9a8;
+  color: white;
+  padding: 20px 137px;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #040d5e;
+}

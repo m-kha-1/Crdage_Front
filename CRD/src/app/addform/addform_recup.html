@@ -1,0 +1,23 @@
+<form class="form-container" (ngSubmit)="submitForm()" >
+ 
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+      </div>
+      <div>
+        <label for="client">Client:</label>
+        <input type="text" id="client" name="client" [(ngModel)]="formData.client" required>
+      </div>
+    
+      Available producers :
+  
+      <div *ngFor = "let p of producerList;index as i">{{p.name}} : ({{p.id}})
+        
+          <input type="checkbox" [(ngModel)]="p.selected" name="producer_{{ i }}" (change)="updateSelectedProducers()">
+      </div>
+      <button id= "bout"type="submit">Create</button>
+  
+    </form>
+    
+  
+    <div class="container mt-3">

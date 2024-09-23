@@ -1,0 +1,159 @@
+<div class="card">
+  <div class="title">
+    <div>
+      <h5 [ngClass]="getClasses()">
+        <a class="link" href="#" (click)="clickChange(task, index, $event)">
+          {{ task.name }}
+        </a>
+
+        <div *ngIf="on == false">
+          <input [(ngModel)]="inputvalue" placeholder="New name" type="text" />
+          <button type="button" class="btn btn-dark" (click)="upName()">
+            change
+          </button>
+        </div>
+      </h5>
+    </div>
+    <div [ngClass]="getClasses()" class="bloc"></div>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>Type:</span>
+          <span>{{ task.type }}</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>Created:</span>
+          <span>{{ task.dateCreated }}</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>Due date:</span>
+          <span
+            ><a href="#" (click)="clickChangeDate(task, index, $event)">{{
+              task.dateDue
+            }}</a></span
+          >
+        </div>
+        <div *ngIf="ondate == false" class="col-12">
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dueDate"
+              [(ngModel)]="selectedDate"
+              ngbDatepicker
+              #d="ngbDatepicker"
+            />
+            <button
+              class="btn btn-outline-secondary bi bi-calendar3"
+              (click)="d.toggle()"
+              type="button"
+            ></button>
+          </div>
+          <button type="button" class="btn btn-dark" (click)="upDate()">
+            change
+          </button>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>Supervisor:</span>
+          <span
+            ><a href="#" (click)="clickChangeSup(task, index, $event)">{{
+              task.cgSupervisor2_name
+            }}</a></span
+          >
+        </div>
+        <div *ngIf="onsup == false">
+          <select
+            multiple
+            class="form-select mi--width"
+            id="supervisors"
+            name="supervisors"
+            [(ngModel)]="selectedSupervisor"
+          >
+            <option *ngFor="let m of sup" [value]="m">{{ m.name }}</option>
+          </select>
+          <button type="button" class="btn btn-dark" (click)="upSup()">
+            change
+          </button>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>Artist:</span>
+          <span
+            ><a href="#" (click)="clickChangeArtist(task, index, $event)">{{
+              task.cgArtist_name
+            }}</a></span
+          >
+        </div>
+        <div *ngIf="onartist == false">
+          <select
+            multiple
+            class="form-select mi--width"
+            id="artists"
+            name="artists"
+            [(ngModel)]="selectedArtist"
+          >
+            <option *ngFor="let m of artist" [value]="m">{{ m.name }}</option>
+          </select>
+          <button type="button" class="btn btn-dark" (click)="upArtist()">
+            change
+          </button>
+        </div>
+      </li>
+
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>Status:</span>
+          <span
+            ><a href="#" (click)="clickChangeStatus(task, index, $event)">{{
+              task.completed ? "Completed" : "IN PROGRESS"
+            }}</a></span
+          >
+        </div>
+        <div *ngIf="onstatus == false">
+          <button
+            *ngIf="task.completed == true"
+            type="button"
+            class="btn btn-warning"
+            (click)="upStatus()"
+          >
+            wip
+          </button>
+          <button
+            *ngIf="task.completed == false"
+            type="button"
+            class="btn btn-success"
+            (click)="upStatus()"
+          >
+            complete
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-danger" (click)="clickDelete()">Delete</button>
+      </div>
+      <div class="col-auto">
+        <a
+          href="#"
+          class="card-link"
+          (click)="clickTask()"
+          [routerLink]="['/taskdetails']"
+        >
+          Details
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

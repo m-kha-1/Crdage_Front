@@ -1,0 +1,9 @@
+loadProducer() {
+  this.producerList = this.productionsService.loadProducer().subscribe((data:any) => this.producerList=data);
+}
+
+
+
+loadProducer() {
+  this.productionsService.loadProducer().subscribe((data: any) => {this.producerList = data; } );
+}

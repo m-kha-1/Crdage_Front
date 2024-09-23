@@ -1,0 +1,11 @@
+{
+    "/assets": {
+      "target": "file:///C:/CORD/",
+      "secure": false,
+      "pathRewrite": {
+        "^/assets": ""
+      },
+      "changeOrigin": true
+    }
+  }
+  

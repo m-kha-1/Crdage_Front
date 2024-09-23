@@ -1,0 +1,8 @@
+.thumbnail {
+    width: 450px;
+    height: auto; 
+    cursor: pointer; 
+   
+    border-radius: 5px; 
+  }
+  

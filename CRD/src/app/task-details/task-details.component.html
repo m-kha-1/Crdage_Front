@@ -1,0 +1,61 @@
+<app-header></app-header>
+<main>
+  <div class="container mt-3">
+    <div *ngFor="let url of urls; let i = index">
+      <div class="card mb-3">
+        <img
+          [src]="url"
+          alt="Image description"
+          class="thumbnail"
+          (click)="onImageClick(i)"
+        />
+
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelected($event, i)"
+          style="display: none"
+          accept="image/*"
+        />
+
+        <div class="card-body">
+          <h5 class="card-title text-danger">
+            Version {{ i + 1 }} is published
+          </h5>
+
+          <!-- <h5>{{ scenes[i] }}</h5>
+          <h5>{{ url }}</h5> -->
+          <button class="btn btn-primary" (click)="launch(scenes[i])">
+            Open work file
+          </button>
+          <a [href]="scenes[i]"></a>
+
+          <h4 class="card-title text-primary">
+            Comments from supervisor ({{ dataTaskString.cgSupervisor2_name }}) :
+          </h4>
+          <h4 class="card-text">
+            {{ dataTaskString.comments_supervisor2[i] }}
+          </h4>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Type comment"
+              [(ngModel)]="commentInput[i]"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="comment(i, commentInput[i])"
+          >
+            Publish comment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
